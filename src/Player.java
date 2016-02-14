@@ -4,7 +4,6 @@ import java.util.Random;
 public class Player {
     private String nameOfPlayer;
     private ArrayList<Property> propertiesOwned;
-    private static int diceNumber;
     private static Random rand;
 
     Player(String nameOfPlayer){

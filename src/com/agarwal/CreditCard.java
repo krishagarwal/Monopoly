@@ -9,21 +9,22 @@ public class CreditCard {
     CreditCard(){
         amountOfBalanceInMillion = 15;
     }
-        //krish is annoying
-    private  static void addMoney() {
-        System.out.println("How much should be added to " + nameOfPlayer + "'s account?");
-        amountOfBalanceInMillion = (myScan.nextDouble()) + amountOfBalanceInMillion;
+        //krish is SUPER annoying!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    private  static void addMoney(int amount) {
+        amountOfBalanceInMillion = amount + amountOfBalanceInMillion;
     }
 
-    private static boolean subtractMoney() {
-        System.out.println("How much money should be subtracted from " + nameOfPlayer + "'s account?");
-        double amountInMillion = 0.0;
-
-        if(amountOfBalanceInMillion < amountInMillion){
+    private static boolean subtractMoney(int dollars) {
+        if(amountOfBalanceInMillion < dollars){
             System.out.println("Oh no! " + nameOfPlayer + " doesn't have enough money!");
             return false;
         } else{
+            updateMoney(dollars);
             return true;
         }
+    }
+
+    private static void updateMoney(int money){
+        amountOfBalanceInMillion = amountOfBalanceInMillion - money;
     }
 }

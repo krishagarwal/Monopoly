@@ -9,7 +9,7 @@ public class CreditCard {
     CreditCard(){
         amountOfBalanceInMillion = 15;
     }
-        //krish is SUPER annoying!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
     private  static void addMoney(int amount) {
         amountOfBalanceInMillion = amount + amountOfBalanceInMillion;
     }

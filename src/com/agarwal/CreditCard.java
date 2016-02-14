@@ -1,4 +1,5 @@
-//Ishika
+package com.agarwal;
+
 import java.util.Scanner;
 public class CreditCard {
     static public double amountOfBalanceInMillion;

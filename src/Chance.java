@@ -1,4 +1,4 @@
-public class Chance extends Choice_Spaces{
+public class Chance extends ChoiceSpace {
     Chance(){
         nameOfSpace = "Chance";
     }

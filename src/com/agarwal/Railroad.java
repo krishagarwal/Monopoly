@@ -1,4 +1,6 @@
-public class Railroad extends Place{
+package com.agarwal;
+
+public class Railroad extends Place {
     private int price;
     private int[] rent;
 

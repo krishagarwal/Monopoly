@@ -1,3 +1,7 @@
+package com.agarwal;
+
+import com.agarwal.Player;
+
 public class Property extends Place{
 	private int price;
 	private int defaultRent;

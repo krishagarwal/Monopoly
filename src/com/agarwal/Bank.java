@@ -1,3 +1,5 @@
+package com.agarwal;
+
 public class Bank {
     public void addMoney(CreditCard c, int money){
         c.amountOfBalance = c.amountOfBalance + money;

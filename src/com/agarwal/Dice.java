@@ -6,11 +6,19 @@ package com.agarwal;
 import java.util.Random;
 
 public class Dice {
-    static Random rand;
+    /*static Random rand;
     Dice(){
         rand=new Random();
     }
     public static int rollDice(){
         return rand.nextInt(12)+2;
+    }*/
+
+    //here is a much simpler way
+
+    public static int rollDice(){
+        return (int)(Math.random()*12 + 1);
     }
+
+
 }

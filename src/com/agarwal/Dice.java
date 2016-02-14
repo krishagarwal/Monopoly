@@ -17,7 +17,7 @@ public class Dice {
     //here is a much simpler way
 
     public static int rollDice(){
-        return (int)(Math.random()*12 + 1);
+        return (int)(Math.random()*11 + 2);
     }
 
 

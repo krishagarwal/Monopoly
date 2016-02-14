@@ -3,12 +3,10 @@ import java.util.Random;
 
 public class Player {
     private String nameOfPlayer;
-    private ArrayList<Property> propertiesOwned;
-    private static Random rand;
+    ArrayList<Property> propertiesOwned;
 
     Player(String nameOfPlayer){
         propertiesOwned = new ArrayList<Property>();
-        rand = new Random();
         this.nameOfPlayer = nameOfPlayer;
     }
 
@@ -17,9 +15,5 @@ public class Player {
     }
     public String getNameOfPlayer(){
         return nameOfPlayer;
-    }
-
-    public ArrayList<Property> getPropertiesOwned(){
-        return propertiesOwned;
     }
 }

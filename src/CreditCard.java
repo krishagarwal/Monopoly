@@ -21,7 +21,10 @@ public class CreditCard {
         double amountInMillion = 0.0;
 
         if(amountOfBalanceInMillion < amountInMillion){
-            System.out.println("Oh no! " + playerName + " doesn't have enough money!")
+            System.out.println("Oh no! " + playerName + " doesn't have enough money!");
+            return false;
+        } else{
+            return true;
         }
     }
 }

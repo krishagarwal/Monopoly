@@ -19,13 +19,6 @@ public class Player {
         return nameOfPlayer;
     }
 
-    public static void rollDice(){
-        diceNumber = rand.nextInt(6) + 1;
-    }
-    public static int getDiceNumber(){
-        return diceNumber;
-    }
-
     public ArrayList<Property> getPropertiesOwned(){
         return propertiesOwned;
     }

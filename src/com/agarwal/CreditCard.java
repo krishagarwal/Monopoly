@@ -9,7 +9,7 @@ public class CreditCard {
     CreditCard(){
         amountOfBalanceInMillion = 15;
     }
-
+        //krish is annoying
     private  static void addMoney() {
         System.out.println("How much should be added to " + nameOfPlayer + "'s account?");
         amountOfBalanceInMillion = (myScan.nextDouble()) + amountOfBalanceInMillion;

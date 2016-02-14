@@ -8,5 +8,5 @@ public abstract class Place {
 		return this.name;
 	}
 
-	public abstract void DoAction();
+	public abstract boolean DoAction(Player player);
 }

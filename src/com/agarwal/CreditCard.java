@@ -2,29 +2,22 @@ package com.agarwal;
 
 import java.util.Scanner;
 public class CreditCard {
-    static public double amountOfBalanceInMillion;
-    static private String nameOfPlayer;
-    static Scanner myScan = new Scanner(System.in);
+    public double amountOfBalanceInMillion;
 
     CreditCard(){
         amountOfBalanceInMillion = 15;
     }
-        //krish is SUPER annoying!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    private  static void addMoney(int amount) {
+
+    public void addMoney(int amount) {
         amountOfBalanceInMillion = amount + amountOfBalanceInMillion;
     }
 
-    private static boolean subtractMoney(int dollars) {
-        if(amountOfBalanceInMillion < dollars){
-            System.out.println("Oh no! " + nameOfPlayer + " doesn't have enough money!");
+    public boolean subtractMoney(int amount) {
+        if(amountOfBalanceInMillion < amount){
             return false;
         } else{
-            updateMoney(dollars);
+            amountOfBalanceInMillion = amountOfBalanceInMillion - amount;
             return true;
         }
-    }
-
-    private static void updateMoney(int money){
-        amountOfBalanceInMillion = amountOfBalanceInMillion - money;
     }
 }

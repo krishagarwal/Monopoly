@@ -1,28 +1,22 @@
 package com.agarwal;
 
-import com.agarwal.Player;
+import java.util.Scanner;
 
 public class Property extends Place{
 	private int price;
-	private int defaultRent;
 	private String colorOfProperty;
 	private int[] rent;
 	private boolean isOwned;
 	private Player ownerOfProperty;
+	private int noOfHouses;
+	private boolean hasHotel;
 
-	Property(int defaultRent, String colorOfProperty, int price, int[] rent){
-		this.rent = new int[4];
-		this.defaultRent = defaultRent;
+	Property(String name, String colorOfProperty, int price, int[] rent){
+		this.name = name;
+		this.rent = new int[6];
+		this.rent = rent;
 		this.colorOfProperty = colorOfProperty;
 		this.price = price;
-		this.rent = rent;
-	}
-
-	public void setDefaultRent(int defaultRent){
-		this.defaultRent = defaultRent;
-	}
-	public int getDefaultRent(){
-		return defaultRent;
 	}
 
 	public void setColorOfProperty(String colorOfProperty){
@@ -39,12 +33,18 @@ public class Property extends Place{
 		return price;
 	}
 
-	public void setRent(int rent, int position)
+	public void setRent(int rent, int noOfHouses)
 	{
-		this.rent[position] = rent;
+		this.rent[noOfHouses] = rent;
 	}
-	public int getRent(int position){
-		return rent[position];
+
+	public int getRent(){
+		if (hasHotel){
+			return rent[5];
+		}
+		else {
+			return rent[noOfHouses];
+		}
 	}
 
 	public void setIsOwned(boolean isOwned){
@@ -59,5 +59,22 @@ public class Property extends Place{
 	}
 	public Player getOwnerOfProperty() {
 		return ownerOfProperty;
+	}
+
+	public boolean DoAction(Player player) {
+		if (!isOwned) {
+			//do nothing
+		} else if (player.equals(ownerOfProperty)){
+			//do nothing
+		} else {
+			int rent = getRent();
+			boolean success = player.getCreditCard().subtractMoney(rent);
+			if (!success ) {
+				return false;
+			}
+
+			ownerOfProperty.getCreditCard().addMoney(rent);
+		}
+		return true;
 	}
 }

@@ -7,5 +7,6 @@ public class Credit_Card {
     Credit_Card(String nameOfPlayer){
         amountOfBalance = 15000000;
         //can you see this change?
+        //yes i can
     }
 }

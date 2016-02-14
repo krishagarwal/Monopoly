@@ -1,7 +1,6 @@
 package com.agarwal;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Player {
     private String nameOfPlayer;
@@ -17,7 +16,6 @@ public class Player {
     public void setCreditCard(CreditCard creditCard) {
         this.creditCard = creditCard;
     }
-
     public CreditCard getCreditCard() {
         return creditCard;
     }

@@ -1,3 +1,4 @@
+package com.agarwal;
 public class Jail extends Place{
 	int chargeToGetOut;
 

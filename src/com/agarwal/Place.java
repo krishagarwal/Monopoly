@@ -1,10 +1,12 @@
 package com.agarwal;
-public class Place {
-	protected String nameOfSpace;
+public abstract class Place {
+	protected String name;
 	public void setName(String name){
-		nameOfSpace = name;
+		this.name = name;
 	}
 	public String getName(){
-		return this.nameOfSpace;
+		return this.name;
 	}
+
+	public abstract void DoAction();
 }

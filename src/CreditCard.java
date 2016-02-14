@@ -9,19 +9,19 @@ public class CreditCard {
         amountOfBalanceInMillion = 15;
     }
 
-    private  static void addMoney(String playerName)
+    private  static void addMoney()
     {
-        System.out.println("How much should be added to " + playerName + "'s account?");
+        System.out.println("How much should be added to " + nameOfPlayer + "'s account?");
         amountOfBalanceInMillion = (myScan.nextDouble()) + amountOfBalanceInMillion;
     }
 
-    private static boolean subtractMoney(String playerName)
+    private static boolean subtractMoney()
     {
-        System.out.println("How much money should be subtracted from " + playerName + "'s account?");
+        System.out.println("How much money should be subtracted from " + nameOfPlayer + "'s account?");
         double amountInMillion = 0.0;
 
         if(amountOfBalanceInMillion < amountInMillion){
-            System.out.println("Oh no! " + playerName + " doesn't have enough money!");
+            System.out.println("Oh no! " + nameOfPlayer + " doesn't have enough money!");
             return false;
         } else{
             return true;

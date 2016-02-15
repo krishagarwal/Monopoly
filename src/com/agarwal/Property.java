@@ -1,7 +1,5 @@
 package com.agarwal;
 
-import java.util.Scanner;
-
 public class Property extends Place{
 	private int price;
 	private String colorOfProperty;

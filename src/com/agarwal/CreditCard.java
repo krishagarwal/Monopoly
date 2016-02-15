@@ -1,22 +1,21 @@
 package com.agarwal;
 
-import java.util.Scanner;
 public class CreditCard {
-    public double amountOfBalanceInMillion;
+    public double amount;
 
     CreditCard(){
-        amountOfBalanceInMillion = 15;
+        amount = 15000;
     }
 
     public void addMoney(int amount) {
-        amountOfBalanceInMillion = amount + amountOfBalanceInMillion;
+        this.amount = amount + this.amount;
     }
 
     public boolean subtractMoney(int amount) {
-        if(amountOfBalanceInMillion < amount){
+        if(this.amount < amount){
             return false;
         } else{
-            amountOfBalanceInMillion = amountOfBalanceInMillion - amount;
+            this.amount = this.amount - amount;
             return true;
         }
     }

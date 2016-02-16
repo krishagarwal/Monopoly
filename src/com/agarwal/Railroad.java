@@ -50,6 +50,7 @@ public class Railroad extends Place {
             if (!success ) {
                 return false;
             }
+            player.getCreditCard().subtractMoney(rent);
             ownerOfRailroad.getCreditCard().addMoney(rent);
         }
         return true;

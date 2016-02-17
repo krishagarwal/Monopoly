@@ -1,8 +1,5 @@
 package com.agarwal;
 
-/**
- * Created by krish_000 on 2/16/2016.
- */
 public class Utility extends Place {
 
     private int price;
@@ -15,10 +12,6 @@ public class Utility extends Place {
         price = Constants.Utility_Price;
     }
 
-    public Player getMoneyWinner(Player moneyWinner){
-        return moneyWinner;
-    }
-
     public int getCharge(){
         if (ownerOfUtility.utilitiesOwned.size() == 2){
             return Dice.getDiceNum()*100;
@@ -26,9 +19,7 @@ public class Utility extends Place {
         else if (ownerOfUtility.utilitiesOwned.size() == 1){
             return Dice.getDiceNum()*40;
         }
-        else{
-            return 0;
-        }
+        return 0;
     }
 
     public void setOwnerOfUtility(Player ownerOfRailroad) {

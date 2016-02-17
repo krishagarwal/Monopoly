@@ -22,8 +22,8 @@ public class Utility extends Place {
         return 0;
     }
 
-    public void setOwnerOfUtility(Player ownerOfRailroad) {
-        this.ownerOfUtility = ownerOfRailroad;
+    public void setOwnerOfUtility(Player ownerOfUtility) {
+        this.ownerOfUtility = ownerOfUtility;
         this.isOwned = true;
     }
 

@@ -5,6 +5,10 @@ public class Railroad extends Place {
     private int[] rent;
     private boolean isOwned;
     private Player ownerOfRailroad;
+    private int priceToUnmortgage;
+    private boolean isMortgaged;
+    private int moneyFromMortgage;
+    private Player mortgagedPropertyOwner;
 
     Railroad(String name){
         rent = new int[5];
@@ -15,6 +19,9 @@ public class Railroad extends Place {
         rent[4] = Constants.RAILROAD_RENT_4;
         price = Constants.RAILROAD_PRICE;
         this.name = name;
+        isMortgaged = false;
+        moneyFromMortgage = Constants.Railroad_Mortgage_Money;
+        priceToUnmortgage = Constants.Railroad_Unmortgage_Price;
     }
 
     public int getPrice() {
@@ -44,6 +51,8 @@ public class Railroad extends Place {
             //do nothing
         } else if (player.equals(ownerOfRailroad)){
             //do nothing
+        } else if(ownerOfRailroad.equals(Bank.getBankPlayer())){
+            //do nothing
         } else {
             int rent = getRent();
             boolean success = player.getCreditCard().subtractMoney(rent);
@@ -54,5 +63,37 @@ public class Railroad extends Place {
             ownerOfRailroad.getCreditCard().addMoney(rent);
         }
         return true;
+    }
+
+    public void setIsMortgaged(boolean isMortgaged) {
+        this.isMortgaged = isMortgaged;
+    }
+    public boolean getIsMortgaged(){
+        return isMortgaged;
+    }
+
+    public boolean mortgageProperty(Player player){
+        if(player.equals(ownerOfRailroad)){
+            player.getCreditCard().addMoney(moneyFromMortgage);
+            setOwnerOfRailroad(Bank.getBankPlayer());
+            mortgagedPropertyOwner = player;
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public boolean unmortgageProperty(Player player){
+        if(player.equals(mortgagedPropertyOwner)){
+            if(priceToUnmortgage > player.getCreditCard().amount){
+                return false;
+            }
+
+            player.getCreditCard().subtractMoney(priceToUnmortgage);
+            mortgagedPropertyOwner = null;
+            ownerOfRailroad = player;
+            return true;
+        }
+        return false;
     }
 }

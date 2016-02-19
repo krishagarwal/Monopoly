@@ -13,5 +13,6 @@ public class GoToJail extends Place{
     public boolean DoAction(Player player) {
         player.isInJail = true;
         player.timeServed = 0;
+        return true;
     }
 }

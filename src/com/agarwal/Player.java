@@ -11,6 +11,8 @@ public class Player {
     private CreditCard creditCard;
     boolean isInJail;
     int timeServed;
+    boolean hasMonopoly;
+    String colorOfMonopolyOwned;
 
     Player(String nameOfPlayer){
         creditCard = new CreditCard();
@@ -19,6 +21,7 @@ public class Player {
         this.nameOfPlayer = nameOfPlayer;
         railroadsOwned = new ArrayList<Railroad>();
         isInJail = false;
+        hasMonopoly = false;
     }
 
     public void setCreditCard(CreditCard creditCard) {
@@ -33,5 +36,18 @@ public class Player {
     }
     public String getNameOfPlayer(){
         return nameOfPlayer;
+    }
+
+    public boolean checkIfHasMonopoly(String color){
+        int numOfPropsWithSameColor = 0;
+        for(int i = 0; i < propertiesOwned.size(); i++){
+            if(propertiesOwned.get(i).getColorOfProperty().equals(color)){
+                numOfPropsWithSameColor++;
+                if(numOfPropsWithSameColor == propertiesOwned.get(i).numOfPropertiesToCompleteMonopoly){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

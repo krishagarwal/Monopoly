@@ -14,8 +14,12 @@ public class Property extends Place{
 	private int moneyFromMortgage;
 	Rounder myRounder;
 	private Player mortgagedPropertyOwner;
+	private int priceToBuyHouse;
+	int propertiesOwnedOfSameColor;
+	int numOfPropertiesToCompleteMonopoly;
+	int currentRent;
 
-	Property(String name, String colorOfProperty, int price, int[] rent){
+	Property(String name, String colorOfProperty, int price, int[] rent, int priceToBuyHouse, int numOfPropertiesToCompleteMonopoly){
 		myRounder = new Rounder();
 		this.name = name;
 		this.rent = new int[6];
@@ -23,8 +27,11 @@ public class Property extends Place{
 		this.colorOfProperty = colorOfProperty;
 		this.price = price;
 		isMortgaged = false;
+		noOfHouses = 0;
 		moneyFromMortgage = price/2;
 		priceToUnmortgage = myRounder.roundToNearestTens(moneyFromMortgage + (moneyFromMortgage/10));
+		this.priceToBuyHouse = priceToBuyHouse;
+		this.numOfPropertiesToCompleteMonopoly = numOfPropertiesToCompleteMonopoly;
 	}
 
 	public void setColorOfProperty(String colorOfProperty){
@@ -64,6 +71,10 @@ public class Property extends Place{
 	}
 	public Player getOwnerOfProperty() {
 		return ownerOfProperty;
+	}
+
+	public int getPriceToBuyHouse() {
+		return priceToBuyHouse;
 	}
 
 	public boolean DoAction(Player player) {
@@ -127,6 +138,27 @@ public class Property extends Place{
 			player.getCreditCard().subtractMoney(priceToUnmortgage);
 			mortgagedPropertyOwner = null;
 			ownerOfProperty = player;
+			return true;
+		}
+		return false;
+	}
+
+	public boolean buyHouse(Property property, int housesToBuy){
+		if(!ownerOfProperty.checkIfHasMonopoly(property.colorOfProperty)){
+			return false;
+		}
+		else if(hasHotel){
+			return false;
+		}
+		else if(!ownerOfProperty.getCreditCard().subtractMoney(housesToBuy*priceToBuyHouse)){
+			return false;
+		}
+		ownerOfProperty.getCreditCard().subtractMoney(housesToBuy*priceToBuyHouse);
+		return true;
+	}
+
+	public boolean checkIfHasHotel(){
+		if(noOfHouses == 5){
 			return true;
 		}
 		return false;

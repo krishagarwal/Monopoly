@@ -1,12 +1,8 @@
 package com.agarwal;
 public class Jail extends Place{
 
-	Jail(int chargeToGetOut){
+	Jail(){
 		this.name = "Jail";
-	}
-
-	public int getChargeToGetOut() {
-		return Constants.Jail_Charge;
 	}
 
 	public void lockUp(Player player){

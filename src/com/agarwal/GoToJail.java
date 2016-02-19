@@ -1,13 +1,17 @@
 package com.agarwal;
 
-/**
- * Created by Chiya on 2/13/2016.
- */
 public class GoToJail extends Place{
+
+    Jail jail;
+
     GoToJail(){
-        name = "Jail";
+        jail = new Jail();
+        name = "Go to Jail";
     }
 
     @Override
-    public void DoAction() {}
+    public boolean DoAction(Player player) {
+        player.isInJail = true;
+        player.timeServed = 0;
+    }
 }

@@ -2,10 +2,7 @@ package com.agarwal;
 
 public class GoToJail extends Place{
 
-    Jail jail;
-
     GoToJail(){
-        jail = new Jail();
         name = "Go to Jail";
     }
 

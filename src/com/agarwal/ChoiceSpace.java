@@ -27,6 +27,7 @@ public class ChoiceSpace extends Place {
             player.getCreditCard().subtractMoney(currentCard.money);
             return true;
         }
+        return true;
     }
 
     public static Card pickupCard(){

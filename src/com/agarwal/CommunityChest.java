@@ -1,7 +1,7 @@
 package com.agarwal;
 
-public class CommunityChest extends ChoiceSpace {
-    CommunityChest(){
-        nameOfSpace = "Community Chest";
-    }
+import java.util.ArrayList;
+
+public class CommunityChest {
+
 }

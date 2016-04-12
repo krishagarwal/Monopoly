@@ -14,7 +14,7 @@ public class ChoiceSpace extends Place {
         this.cardArray = cardArray;
     }
 
-    @Override
+    /*@Override
     public boolean DoAction(Player player) {
         if(currentCard.operator.equals("+")){
             player.getCreditCard().addMoney(currentCard.money);
@@ -28,7 +28,9 @@ public class ChoiceSpace extends Place {
             return true;
         }
         return true;
-    }
+    }*/
+    @Override
+    public boolean DoAction(Player player) {return false;}
 
     public static Card pickupCard(){
         int index = randomGenerator.nextInt(cardArray.size());

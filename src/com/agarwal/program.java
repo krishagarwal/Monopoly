@@ -5,7 +5,7 @@ package com.agarwal;
  */
 public class program {
     public static void main(String[] args){
-        int value= Dice.rollDice()  ;
+        int value = Dice.rollDice();
 
         System.out.println("value: " + value);
     }

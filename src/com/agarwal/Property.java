@@ -35,12 +35,12 @@ public class Property extends SellablePlace{
 	}
 
 	public int getRent(){
-		if (checkIfHasHotel()){
+		/*if (checkIfHasHotel()){
 			return rent[5];
 		}
-		else {
+		else {*/
 			return rent[noOfHouses];
-		}
+		//}
 	}
 
 	public int getPriceToBuyHouse() {

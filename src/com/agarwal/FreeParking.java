@@ -9,6 +9,9 @@ public class FreeParking extends Place{
         name = "Free Parking";
     }
 
+
     @Override
-    public void DoAction() {}
+    public boolean DoAction(Player player) {
+        return true;
+    }
 }

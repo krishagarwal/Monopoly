@@ -39,12 +39,4 @@ public class Railroad extends SellablePlace {
         }
         return true;
     }
-
-    public void setIsMortgaged(boolean isMortgaged) {
-        this.isMortgaged = isMortgaged;
-    }
-
-    public boolean getIsMortgaged() {
-        return isMortgaged;
-    }
 }

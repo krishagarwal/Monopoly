@@ -12,7 +12,6 @@ public class Player {
     boolean isInJail;
     int timeServed;
     boolean hasMonopoly;
-    String colorOfMonopolyOwned;
 
     Player(String nameOfPlayer){
         creditCard = new CreditCard();

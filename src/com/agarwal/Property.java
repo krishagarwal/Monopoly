@@ -4,7 +4,7 @@ package com.agarwal;
 public class Property extends SellablePlace{
 	private String colorOfProperty;
 	private int[] rent;
-	private int noOfHouses;
+    int noOfHouses;
 	private int priceToBuyHouse;
 	int numOfPropertiesToCompleteMonopoly;
 
@@ -35,12 +35,7 @@ public class Property extends SellablePlace{
 	}
 
 	public int getRent(){
-		/*if (checkIfHasHotel()){
-			return rent[5];
-		}
-		else {*/
-			return rent[noOfHouses];
-		//}
+        return rent[noOfHouses];
 	}
 
 	public int getPriceToBuyHouse() {
@@ -71,6 +66,7 @@ public class Property extends SellablePlace{
 			return false;
 		}
 		owner.getCreditCard().subtractMoney(housesToBuy*priceToBuyHouse);
+        noOfHouses = noOfHouses + housesToBuy;
 		return true;
 	}
 
